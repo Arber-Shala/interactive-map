@@ -1,0 +1,13 @@
+version: '3.8'
+
+service:
+
+  django:
+    containter_name: django
+    build:
+      context: ./interactive_map
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./interactive_map:/usr/src/app/
+    ports:
+      - 8001:8000 
